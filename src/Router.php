@@ -48,15 +48,13 @@ class Router {
      * @param $controllerAction
      * @param array $args
      * @param array $permissionCallback
-     * @param array $sanitationCallback
      * @throws \Exception
      */
     public function registerRoute($method,
                                   $endpoint,
                                   $controllerAction,
                                   $args = array(),
-                                  $permissionCallback = null,
-                                  $sanitationCallback = null)
+                                  $permissionCallback = null)
     {
         list($className, $actionName) = $this->getControllerNameAndAction($controllerAction);
 
@@ -66,7 +64,7 @@ class Router {
             throw new \Exception("Method {$actionName} not found in class {$className}");
         }
 
-        $options = $this->getRouteOptions($method, $args, $permissionCallback, $sanitationCallback, $controller, $actionName);
+        $options = $this->getRouteOptions($method, $args, $permissionCallback, $controller, $actionName);
 
         register_rest_route($this->apiNamespace, $endpoint, $options);
     }
@@ -108,12 +106,11 @@ class Router {
      * @param $method
      * @param $args
      * @param $permissionCallback
-     * @param $sanitationCallback
      * @param $controller
      * @param $actionName
      * @return array
      */
-    protected function getRouteOptions($method, $args, $permissionCallback, $sanitationCallback, $controller, $actionName) {
+    protected function getRouteOptions($method, $args, $permissionCallback, $controller, $actionName) {
         $options = array(
             'methods' => $method,
             'callback' => array($controller, $actionName),
@@ -122,10 +119,6 @@ class Router {
 
         if ($permissionCallback != null) {
             $options['permission_callback'] = $permissionCallback;
-        }
-
-        if ($sanitationCallback != null) {
-            $options['sanitation_callback'] = $sanitationCallback;
         }
 
         return $options;
