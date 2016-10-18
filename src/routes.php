@@ -28,3 +28,5 @@ $router->get('posts','PostsController@index',[
     ],
     'category_slug',
 ]);
+
+$router->get('categories','CategoriesController@index');
