@@ -28,6 +28,8 @@ $router->get('endpoint',
                 $sanitationCallback);
 ```
 
+> Controllers should be placed inside **src/Controllers** directory and must extend **WP_REST_Controller** class of the WP REST API Plugin.
+
 Available Request Methods:
 * get
 * post
