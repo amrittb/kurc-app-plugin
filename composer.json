@@ -1,0 +1,23 @@
+{
+	"name": "amriterry/kurc-api",
+	"description": "REST API Extension for KURC",
+	"type": "wordpress-plugin",
+	"keywords": [
+		"wordpress"
+	],
+	"authors": [
+		{
+			"name": "Amrit Twanabasu",
+			"homepage": "http://amrittwanabasu.com.np",
+			"email": "amrit.cas@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Kurc\\": "src/"
+		}
+	}
+}
