@@ -31,6 +31,10 @@ class UserTransformer implements TransformerContract {
             unset($_data[$field]);
         }
 
+        $_data["avatar"] = $_data["avatar_urls"]["96"];
+
+        unset($_data["avatar_urls"]);
+
         $data->data = $_data;
 
         return $data;
