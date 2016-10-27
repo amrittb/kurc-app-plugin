@@ -1,6 +1,6 @@
 <?php namespace Kurc\Transformers;
 
-class PostTransformer implements TransformerContract {
+class PostTransformer extends BaseTransformer {
 
     /**
      * Fields to be removed from original response.
@@ -50,9 +50,7 @@ class PostTransformer implements TransformerContract {
             $_data['featured_media'] = null;
         }
 
-        foreach($this->removingFields as $field) {
-            unset($_data[$field]);
-        }
+        $this->removeFields($_data);
 
         $data->data = $_data;
 

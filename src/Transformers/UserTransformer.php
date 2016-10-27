@@ -1,6 +1,6 @@
 <?php namespace Kurc\Transformers;
 
-class UserTransformer implements TransformerContract {
+class UserTransformer extends BaseTransformer {
 
     /**
      * Fields to remove from response.
@@ -27,13 +27,11 @@ class UserTransformer implements TransformerContract {
     public function transform($data, $post, $request) {
         $_data = $data->data;
 
-        foreach($this->removingFields as $field) {
-            unset($_data[$field]);
-        }
-
         $_data["avatar"] = $_data["avatar_urls"]["96"];
 
         unset($_data["avatar_urls"]);
+
+        $this->removeFields($_data);
 
         $data->data = $_data;
 

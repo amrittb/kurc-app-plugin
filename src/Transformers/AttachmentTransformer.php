@@ -1,6 +1,6 @@
 <?php namespace Kurc\Transformers;
 
-class AttachmentTransformer implements TransformerContract {
+class AttachmentTransformer extends BaseTransformer {
 
     protected $removingFields = [
         'type',
@@ -27,15 +27,15 @@ class AttachmentTransformer implements TransformerContract {
 	public function transform($data, $post, $request) {
 		$_data = $data->data;
 
-        foreach($this->removingFields as $field) {
-            unset($_data[$field]);
-        }
-
-        $_data["title"] = $_data["title"]["rendered"];
+		if(isset($_data['title']['rendered'])) {
+	        $_data['title'] = $_data['title']['rendered'];
+		}
 
         $_data["sizes"] = $_data["media_details"]["sizes"];
 
         unset($_data["media_details"]);
+
+        $this->removeFields($_data);
 
 		$data->data = $_data;
 
