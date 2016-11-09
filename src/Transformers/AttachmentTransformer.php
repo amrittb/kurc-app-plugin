@@ -1,6 +1,8 @@
 <?php namespace Kurc\Transformers;
 
-class AttachmentTransformer extends BaseTransformer {
+class AttachmentTransformer implements TransformerContract {
+
+	use RemovesFields;
 
     protected $removingFields = [
         'type',
@@ -41,4 +43,8 @@ class AttachmentTransformer extends BaseTransformer {
 
 		return $data;
 	}
+
+    protected function getRemovingFields() {
+        return $this->removingFields;
+    }
 }

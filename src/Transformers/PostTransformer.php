@@ -1,6 +1,8 @@
 <?php namespace Kurc\Transformers;
 
-class PostTransformer extends BaseTransformer {
+class PostTransformer implements TransformerContract {
+
+    use RemovesFields;
 
     /**
      * Fields to be removed from original response.
@@ -13,7 +15,6 @@ class PostTransformer extends BaseTransformer {
                                     'comment_status',
                                     'ping_status',
                                     'format',
-                                    'sticky',
                                 ];
 
     /**
@@ -55,5 +56,9 @@ class PostTransformer extends BaseTransformer {
         $data->data = $_data;
 
         return $data;
+    }
+
+    protected function getRemovingFields() {
+        return $this->removingFields;
     }
 }
