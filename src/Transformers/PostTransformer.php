@@ -47,10 +47,6 @@ class PostTransformer implements TransformerContract {
             }
         }
 
-        if($_data['featured_media'] == 0) {
-            $_data['featured_media'] = null;
-        }
-
         $this->removeFields($_data);
 
         $data->data = $_data;
