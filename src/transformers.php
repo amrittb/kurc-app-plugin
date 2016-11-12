@@ -1,7 +1,7 @@
 <?php
 
 return [
-	Kurc\Transformers\PostTransformer::class,
-	Kurc\Transformers\UserTransformer::class,
-    Kurc\Transformers\AttachmentTransformer::class,
+	"Kurc\Transformers\PostTransformer",
+	"Kurc\Transformers\UserTransformer",
+    "Kurc\Transformers\AttachmentTransformer",
 ];
