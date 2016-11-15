@@ -39,15 +39,15 @@ class AttachmentTransformer implements TransformerContract {
 
         $_data["sizes"] = $_data["media_details"]["sizes"];
 
-    	if(isset($_data['sizes']['full'])) {
+    	if(property_exists($_data["sizes"],"full")) {
         	$_data["full_image"] = $_data['sizes']['full'];
         	unset($_data['sizes']['full']);
     	} else {
-			$_data["full_image"]["file"] = $_data["media_details"]["file"];
-			$_data["full_image"]["width"] = $_data["media_details"]["width"];
-			$_data["full_image"]["height"] = $_data["media_details"]["height"];
-			$_data["full_image"]["mime_type"] = $_data["mime_type"];
-			$_data["full_image"]["source_url"] = $_data["source_url"];
+			$_data["sizes"]->full["file"] = $_data["media_details"]["file"];
+			$_data["sizes"]->full["width"] = $_data["media_details"]["width"];
+			$_data["sizes"]->full["height"] = $_data["media_details"]["height"];
+			$_data["sizes"]->full["mime_type"] = $_data["mime_type"];
+			$_data["sizes"]->full["source_url"] = $_data["source_url"];
     	}
 
         $this->removeFields($_data);
