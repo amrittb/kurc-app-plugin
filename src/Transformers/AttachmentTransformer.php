@@ -39,10 +39,7 @@ class AttachmentTransformer implements TransformerContract {
 
         $_data["sizes"] = $_data["media_details"]["sizes"];
 
-    	if(property_exists($_data["sizes"],"full")) {
-        	$_data["full_image"] = $_data['sizes']['full'];
-        	unset($_data['sizes']['full']);
-    	} else {
+    	if(is_object($_data["sizes"]) && count(get_object_vars($_data["sizes"])) == 0) {
 			$_data["sizes"]->full["file"] = $_data["media_details"]["file"];
 			$_data["sizes"]->full["width"] = $_data["media_details"]["width"];
 			$_data["sizes"]->full["height"] = $_data["media_details"]["height"];
