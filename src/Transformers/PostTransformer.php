@@ -10,7 +10,6 @@ class PostTransformer implements TransformerContract {
      * @var array
      */
     protected $removingFields = [
-                                    'type',
                                     'guid',
                                     'comment_status',
                                     'ping_status',

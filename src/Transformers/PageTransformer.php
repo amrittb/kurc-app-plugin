@@ -6,13 +6,11 @@ class PageTransformer implements TransformerContract {
 
 	protected $removingFields = [
 									"guid",
-									"type",
 									"parent",
 									"menu_order",
 									"comment_status",
 									"ping_status",
 									"template",
-									"excerpt",
 								];
 
 	/**
