@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: KURC API
- * Description: JSON-based REST API for WordPress, developed for KURC Website.
+ * Plugin Name: KURC App
+ * Description: KURC App modules and JSON-based REST API for WordPress, developed for KURC Website.
  * Author: Amrit Twanabasu
  * Author URI: http://amrittwanabasu.com.np
  * Version: 1.0
- * Plugin URI: https://github.com/amriterry/kurc-wp-api
+ * Plugin URI: https://github.com/amriterry/kurc-app-plugin.git
  * License: GPL2+
  */
 

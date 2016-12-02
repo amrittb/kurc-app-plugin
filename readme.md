@@ -1,12 +1,12 @@
-# KURC Wordpress API plugin
+# KURC Wordpress App plugin
 
-This wordpress plugin is built on top of [WP REST API](http://v2.wp-api.org/) plugin. Install this plugin first then install this.
+This wordpress plugin is built on top of [WP REST API](http://v2.wp-api.org/) plugin. This plugin gives extra modules to work on with KURC Wordpress installation. Install this plugin first then install this.
 
 ## Installation
 
 * Clone this repo to <wp-dir>/wp-content/plugins.
 ``` sh
-git clone https://github.com/amriterry/kurc-wp-api.git
+git clone https://github.com/amriterry/kurc-app-plugin.git
 ```
 
 * Run dump autoload files via composer.
