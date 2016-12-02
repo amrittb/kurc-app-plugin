@@ -9,6 +9,11 @@ This wordpress plugin is built on top of [WP REST API](http://v2.wp-api.org/) pl
 git clone https://github.com/amriterry/kurc-app-plugin.git
 ```
 
+* Install dependencies.
+``` sh
+composer install
+```
+
 * Run dump autoload files via composer.
 ``` sh
 composer dump-autoload
@@ -56,3 +61,18 @@ define("KURC_API_CONTROLLER_NAMESPACE",CONTROLLER_NAMESPACE);
 * delete
 
 These methods are directly converted to WP_REST_Server::***** Constants.
+
+### Setting up response transformers.
+
+> Response Transformers are not recommended as the response may change when WP Rest API is updated.
+> @TODO: Use a seperate controller for each reponse.
+
+Add full path of transformer class which implements **TransformerContract** in **src/transformers.php**.
+
+``` php
+<?php
+
+return [
+	'Kurc\Transformers\PostTransformer',
+];
+```
