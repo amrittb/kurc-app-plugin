@@ -1,6 +1,6 @@
 {
-	"name": "amriterry/kurc-api",
-	"description": "REST API Extension for KURC",
+	"name": "amriterry/kurc-pp-plugin",
+	"description": "KURC App Modules and REST API Extension for KURC",
 	"type": "wordpress-plugin",
 	"keywords": [
 		"wordpress"
